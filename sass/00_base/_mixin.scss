@@ -1,0 +1,33 @@
+/* Breakpoints */
+
+@mixin devicebreak($point) {
+
+    @if $point == tablet {
+        @media screen and (min-width:600px) {
+            @content;
+        }
+    }
+  
+    @else if $point == desktop {
+        @media screen and (min-width:900px) {
+            @content;
+        }
+    }
+  
+    @else {
+        @content;
+    }
+  
+  }
+
+/* Function and mixin Rem with a px-fallback */
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+  }
+  
+  @mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }

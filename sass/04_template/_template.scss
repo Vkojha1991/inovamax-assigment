@@ -1,0 +1,33 @@
+.wrapper {
+    @include devicebreak(desktop) {
+        .doc-banner {
+            width:45%;
+            border-radius:5px 0 0 5px;
+            &:before{
+                border-radius:5px 0 0 5px;
+            }
+            .container {
+                padding:0 36px;
+            }
+        }
+        .form-wrapper {
+            width:55%;
+            .container {
+                padding:0 60px;
+            }
+        }
+    } 
+}
+
+.row_list {
+    .movie {
+        max-width:100%;
+        margin-bottom:20px;
+        @include devicebreak(tablet) {
+            max-width:48%;
+        }
+        @include devicebreak(desktop) {
+            max-width:32%;
+        }
+    }
+}

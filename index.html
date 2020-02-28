@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	<!-- Title of document -->
+	<title>Assigment-Home</title>
+
+	<!-- Google fonts: Roboto -->	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+	
+	<!-- External CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+</head>
+<body>
+	<!-- Main wrapper start-->
+	<main class="wrapper">
+
+		<!-- Banner section start-->
+		<section class="doc-banner">
+			<div class="container">
+				
+				<!-- Banner section heading start-->
+				<h1 class="login-title"></h1>
+				<!-- Banner section heading end-->
+
+			</div>
+		</section>
+		<!-- Banner section end-->
+
+		<!-- Form wrapper start -->
+		<section class="form-wrapper">
+			<div class="container">
+
+				<!-- Form start -->
+				<form name="myForm" onsubmit = "return(validate());">
+					
+					<!-- Form sign up title start -->
+					<h2>Login</h2>
+					<!-- Form sign up title end -->
+						
+					<!-- Form user field start -->
+					<fieldset class="form-group">
+						<label class="label" for="user">Enter your username</label>
+						<input type="text" class="form-control" name="user" id="user" placeholder="">
+						<span class="error" id="user-error"></span>
+					</fieldset>
+					<!-- Form user field end -->
+
+					<!-- Form password field start -->
+					<fieldset class="form-group">
+						<label class="label" for="password">Enter your password</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="">
+						<span id="pwd-error" class="error"></span>
+					</fieldset>
+					<!-- Form password field end -->
+
+					<!-- Form submit button start -->
+					<fieldset class="form-group">
+						<button type="submit">Login</button>
+					</fieldset>
+					<!-- Form submit button end -->
+				</form>
+				<!-- Form end -->
+
+			</div>
+		</section>
+		<!-- Form wrapper end -->
+	</main>
+	<!-- Main wrapper end-->
+	
+	<!-- External Javascript file -->
+	<script src="./assets/js/custom.js"></script>
+	<script>
+		/* Translate Welcome text as per user location */
+		if (navigator.geolocation) { 
+			navigator.geolocation.getCurrentPosition(function(position){
+				var lat = position.coords.latitude;
+				var lon = position.coords.longitude;
+				// $.ajax({ url:'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lon+'&sensor=true&key=AIzaSyAutmsX8KU-UHGVFeD55ZucBqo-vJvvBcc',
+				//      success: function(data){
+				//         //var country = data.results[0].address_components[6].long_name;
+				//          console.log(data);
+				//      }
+				// });
+				var elSelect = document.getElementsByClassName('login-title');
+				if(elSelect.length > 0) {
+					if(lat == 46.227638 && lon == 2.213749) {
+						elSelect[0].innerHTML = "Bienvenue à vous tous"; //fr
+					} else if(lat == 51.165691 && lon == 10.451526) {
+						elSelect[0].innerHTML = "Willkommen bei euch allen"; //de
+					} else {
+						elSelect[0].innerHTML = "Welcome to all of you";
+					}
+				};	
+			});
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.doc-banner {
+    background:url('../../assets/images/banner-img.jpg') no-repeat;
+    min-height:270px;
+    background-size:cover;
+    position: relative;
+    display:flex;
+    align-items:center;
+    color:$white;
+    &:before {
+        content:'';
+        display:block;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        position: absolute;
+        background-color:rgba($bringle, 0.7);
+    }
+    .container {
+        position: relative;
+    }
+    h1 {
+        margin-bottom:20px;
+    }
+}

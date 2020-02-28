@@ -1,0 +1,44 @@
+label {
+    @include font-size(14px);
+    display:block;
+    small {
+        opacity:0.9;
+    }
+}
+
+input {
+    &.form-control {
+        height:48px;
+        border:1px solid $border;
+        width:100%;
+        padding:0 15px;
+        @include font-size(16px);
+        display:block;
+        @include devicebreak(desktop) {
+            height:38px;
+        }
+    }
+}
+
+button {
+    border:none;
+    background-color:$blue;
+    padding:8px 40px;
+    font-weight:$regular;
+    color:$white;
+    @include font-size(18px);
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    cursor: pointer;
+}
+
+.error {
+    display:none;
+    color:$white;
+    @include font-size(13px);
+    font-weight:$med;
+    background-color:$pink;
+    padding:2px 10px;
+    border-radius:3px;
+}
